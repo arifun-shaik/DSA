@@ -1,0 +1,43 @@
+given arr[n] every element appears twice except for one element which appears once find that unique element
+import java.util.*;
+class UniqueElement {
+    public int unique(int[] arr){
+        int n=arr.length;
+        int ans=0;
+        for(int i=0;i<n;i++){
+            ans=ans^arr[i];
+        }
+        return ans;
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr= new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        UniqueElement ue=new UniqueElement();
+        int ans=ue.unique(arr);
+        System.out.println(ans);
+    }
+}
+
+How to check whether a number is even or odd not using +,-,*,/ 
+class EvenOrOdd {
+    public int check(int n){
+        if(n&1==0){
+            System.out.println("even");
+        }
+        else{
+            System.out.println("odd");
+
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        EvenOrOdd eo=new EvenOrOdd();
+        hr.check(n);
+    }
+}
