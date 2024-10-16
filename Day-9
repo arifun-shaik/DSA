@@ -98,3 +98,44 @@ class HelloWorld {
         System.out.println(NonRepeat);
     }
 }
+4:Given n array elements, check if their exists a pair of (i,j) such that arr[i]+arr[j]==k and i!=j
+import java.util.*;
+class HelloWorld {
+    public boolean SumOFtwo(int[] arr,int k){
+        int n=arr.length;
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            if(map.containsKey(arr[i])==true){
+                int temp=map.get(arr[i]);
+                map.put(arr[i],temp+1);
+            }
+            else{
+                map.put(arr[i],1);
+            }
+        }
+        for(int j=0;j<n;j++){
+            int a=arr[j];
+            int b=k-a;
+            if(a!=b && map.containsKey(b)==true){
+                return true;
+            }
+            else if(a==b && map.containsKey(b) && map.get(b)>1){
+                return true;
+            }
+        }
+        return false;
+        
+        }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int k=sc.nextInt();
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }  
+        HelloWorld hr=new HelloWorld();
+        boolean NonRepeat=hr.SumOFtwo(arr,k);
+        System.out.println(NonRepeat);
+    }
+}
