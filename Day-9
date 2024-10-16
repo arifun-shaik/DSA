@@ -40,3 +40,38 @@ class HelloWorld {
         hr.frequency(arr,arr1);
     }
 }
+2: To find the non-repeating elements in a array if a element is repeating return the element if not return -1
+import java.util.*;
+class HelloWorld {
+    public int frequency(int[] arr){
+        int n=arr.length;
+        HashMap<Integer, Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            if(map.containsKey(arr[i])==true){
+                int temp=map.get(arr[i]);
+                map.put(arr[i],temp+1);
+            }
+            else{
+                map.put(arr[i],1);
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(map.get(arr[i])==1){
+                return arr[i];
+            }
+        }
+        return -1;
+        }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        HelloWorld hr=new HelloWorld();
+        int NonRepeat=hr.frequency(arr);
+        System.out.println(NonRepeat);
+    }
+}
