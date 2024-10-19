@@ -1,0 +1,80 @@
+1: How to find the sum of all numbers upto n using recursion
+import java.util.*;
+class HelloWorld {
+    public static int sum(int n){
+        if(n==1){
+            return 1;
+        }
+        int temp=sum(n-1);
+        return temp+n;
+    }
+    public static void main(String[] args) {
+        HelloWorld hr=new HelloWorld();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sum=hr.sum(n); 
+        System.out.println(sum);
+        
+    }
+}
+2: How to find the factorial of n numbers
+import java.util.*;
+class HelloWorld {
+    public static int fact(int n){
+        if(n==1){
+            return 1;
+        }
+        int temp=fact(n-1);
+        return temp*n;
+    }
+    public static void main(String[] args) {
+        HelloWorld hr=new HelloWorld();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int factorial=hr.fact(n); 
+        System.out.println(factorial);
+        
+    }
+}
+3: Find the nth fibanocci number
+import java.util.*;
+class HelloWorld {
+    public static int fib(int n){
+        if(n==0||n==1){
+                return n;
+        }
+        int temp1=fib(n-1);
+        int temp2=fib(n-2);
+        return temp1+temp2;
+        }
+        
+        
+    public static void main(String[] args) {
+        HelloWorld hr=new HelloWorld();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int fib=fib(n); 
+        System.out.println(fib);
+        
+    }
+}
+4: Print all numbers upto n
+import java.util.*;
+class HelloWorld {
+    public static void num(int n){
+        if(n==1){
+            System.out.println(1);
+        }
+        else{
+        num(n-1);
+        System.out.println(n);
+        }
+    }
+    public static void main(String[] args) {
+        HelloWorld hr=new HelloWorld();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        num(n);
+        
+    }
+}
