@@ -59,3 +59,72 @@ class Main {
         System.out.println(result);
     }
 }
+
+3: finding good integer even the numbers are repeated
+import java.util.*;
+class Main {
+    public int GoodInteger(int arr[]){
+        Arrays.sort(arr);
+        int n=arr.length;
+        int count=0;
+        int lesscount=0;
+        for(int i=1;i<n;i++){
+            if(arr[i]!=arr[i-1]){
+                lesscount=i;
+            }
+            if(arr[i]==lesscount){
+                count++;
+            }
+            
+        }
+        return count;
+    }
+    
+    
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the length of the array");
+        int n=sc.nextInt();
+        System.out.println("Enter the array");
+        int[] arr =new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Main mn=new Main();
+        int result=mn.GoodInteger(arr);
+        System.out.println(result);
+    }
+}
+4: BubbleSort
+
+import java.util.*;
+class Main {
+    public void BubbleSort(int arr[]){
+        int n=arr.length;
+        for(int i=0;i<n-1;i++){
+            for(int j=0;j<n-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        for(int i=0;i<n;i++){
+            System.out.print( arr[i]);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the length of the array");
+        int n=sc.nextInt();
+        System.out.println("Enter the array");
+        int[] arr =new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Main mn=new Main();
+        mn.BubbleSort(arr);
+    }
+
+}
