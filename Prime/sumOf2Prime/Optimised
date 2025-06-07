@@ -1,0 +1,32 @@
+class OptimizedSumOfTwoPrimes {
+    static String isSumOfTwo(int N) {
+        // Step 1: Sieve of Eratosthenes
+        boolean[] isPrime = new boolean[N + 1];
+        for (int i = 2; i <= N; i++) {
+            isPrime[i] = true;
+        }
+
+        for (int i = 2; i * i <= N; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= N; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        // Step 2: Check if any two primes add to N
+        for (int i = 2; i <= N / 2; i++) {
+            if (isPrime[i] && isPrime[N - i]) {
+                return "Yes";
+            }
+        }
+
+        return "No";
+    }
+
+    // Sample usage
+    public static void main(String[] args) {
+        int N = 34;
+        System.out.println("Can " + N + " be expressed as sum of two primes? " + isSumOfTwo(N));
+    }
+}
