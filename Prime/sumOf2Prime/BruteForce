@@ -1,0 +1,26 @@
+class SumOfTwoPrimes {
+    // Check if number can be expressed as sum of two prime numbers
+    static String isSumOfTwo(int N) {
+        for (int i = 2; i <= N / 2; i++) {
+            if (isPrime(i) && isPrime(N - i)) {
+                return "Yes";
+            }
+        }
+        return "No";
+    }
+
+    // Helper method to check if number is prime
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int j = 2; j * j <= n; j++) {
+            if (n % j == 0) return false;
+        }
+        return true;
+    }
+
+    // Sample usage
+    public static void main(String[] args) {
+        int N = 34;
+        System.out.println("Can " + N + " be expressed as sum of two primes? " + isSumOfTwo(N));
+    }
+}
