@@ -1,0 +1,13 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        StringBuilder reversed = new StringBuilder();
+        for (int i = s.length() - 1; i >= 0; i--) {
+            reversed.append(s.charAt(i)); // O(1) amortized
+        }
+        return s.equals(reversed.toString());
+    }
+}
+Time Complexity: O(n)
+
+Space Complexity: O(n)
