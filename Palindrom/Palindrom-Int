@@ -1,0 +1,16 @@
+class Solution {
+    public boolean isPalindrome(int n) {
+        int originalNum = n;
+        int reversedNum = 0;
+
+        while (n > 0) {
+            int lastDigit = n % 10;                  // Extract the last digit
+            reversedNum = (reversedNum * 10) + lastDigit; // Append digit
+            n = n / 10;                              // Remove last digit
+        }
+
+        return originalNum == reversedNum;
+    }
+}
+Time Complexity	O(log₁₀n)	You process each digit once (e.g., 12321 → 5 digits)
+Space Complexity	O(1)
