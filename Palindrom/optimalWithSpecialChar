@@ -1,0 +1,27 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase();         // s = "A man, a plan, a canal: panama"
+
+        StringBuilder cleanStr = new StringBuilder();
+        char[] chars = s.toCharArray();
+        for(char ch : chars){
+            if(Character.isLetterOrDigit(ch)){  // Filter out all spaces and non-aplhabetic characters
+                // cleanstr = "amanaplanacanalpanama"
+                cleanStr.append(ch);
+            }
+        }
+        int left = 0, right = cleanStr.length()-1;
+        while(left < right){
+            // check the string from both sides
+            if(cleanStr.charAt(left) != cleanStr.charAt(right)) return false;
+            left++;
+            right--;
+
+        }
+        
+        return true;
+    }
+}
+Time Complexity: O(n)
+
+Space Complexity: O(1)
