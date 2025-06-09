@@ -1,0 +1,12 @@
+class Solution {
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;  // remainder becomes new b
+            a = temp;   // old b becomes new a
+        }
+        return a;
+    }
+}
+Time Complexity: O(log(min(a, b)))
+Space Complexity: O(1)
