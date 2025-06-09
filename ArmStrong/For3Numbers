@@ -1,0 +1,21 @@
+class Solution {
+    static boolean armstrongNumber(int n) {
+        int arm = 0, rem, c;
+        c = n;  // Store original number
+
+        while(n > 0){
+            rem = n % 10;                 // Get last digit
+            arm = (rem * rem * rem) + arm; // Add cube of digit
+            n = n / 10;                   // Remove last digit
+        }
+
+        if(c == arm) return true;
+        return false;
+    }
+}
+Time Complexity Average/General case: O(log₁₀ n)
+Space Complexity = O(1) (constant space)
+
+
+
+
