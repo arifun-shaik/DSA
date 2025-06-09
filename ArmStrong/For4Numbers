@@ -1,0 +1,21 @@
+class Solution {
+    static boolean armstrongNumber(int n) {
+        int originalNum = n;
+        int digits = (int) Math.log10(n) + 1;
+        int sum = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            sum += Math.pow(digit, digits);
+            n /= 10;
+        }
+
+        return sum == originalNum;
+    }
+}
+Time Complexity: O(d)
+(d = number of digits = log₁₀(n))
+Because we process one digit per loop iteration.
+
+Space Complexity: O(1)
+Only a few variables used
