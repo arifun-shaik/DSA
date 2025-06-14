@@ -1,0 +1,16 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        int n = nums.length;
+        ArrayList<Integer> list = new ArrayList<>();
+        HashSet<Integer> Set = new HashSet<>();
+        for(int num : nums){
+            if(!Set.add(num)){
+                list.add(num);
+            }
+        }
+        return list;
+        
+    }
+}
+✅ Time Complexity: O(n)
+✅ Space Complexity: O(n)
