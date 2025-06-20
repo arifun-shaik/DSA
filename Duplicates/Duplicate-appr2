@@ -1,16 +1,16 @@
-class Solution {
-    public List<Integer> findDuplicates(int[] nums) {
-        int n = nums.length;
-        ArrayList<Integer> list = new ArrayList<>();
-        HashSet<Integer> Set = new HashSet<>();
-        for(int num : nums){
-            if(!Set.add(num)){
-                list.add(num);
-            }
+import java.util.*;
+public class Hello {
+     public static void main(String[] args) {
+       int[] arr = {1,1,2,2,3,4,5,4};
+       ArrayList<Integer> list = new ArrayList<>();
+       HashSet<Integer> mpp = new HashSet<>();
+       for(int num : arr){
+        if(mpp.contains(num)){
+            list.add(num);
         }
-        return list;
-        
-    }
-}
+        mpp.add(num);
+
+       }
+       System.out.print(list);
 ✅ Time Complexity: O(n)
 ✅ Space Complexity: O(n)
