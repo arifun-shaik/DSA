@@ -1,0 +1,19 @@
+public class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> res = new HashMap<>();
+        for (String s : strs) {
+            int[] count = new int[26];---------O(1)
+            for (char c : s.toCharArray()) {----------O(n)
+                count[c - 'a']++;---------------O(1)
+            }
+            String key = Arrays.toString(count);----O(1), SC:O(n)
+            res.putIfAbsent(key, new ArrayList<>());---O(1)
+            res.get(key).add(s);-----O(1)
+        }
+        return new ArrayList<>(res.values());
+    }
+n = number of strings in strs
+k = maximum length of a string in strs
+
+Time Complexity: O(n * k )
+Space Complexity: O(n * k)
